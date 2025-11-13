@@ -19,7 +19,7 @@ class IESODataLoader:
         with open(filepath, "r", encoding="utf-8") as f:
             lines = f.readlines()
 
-        # find first non-metadata line (doesn't start with '\')
+        # doesn't start with '\')
         header_row = next(i for i, line in enumerate(lines) if not line.startswith("\\"))
 
         return pd.read_csv(filepath, skiprows=header_row)
