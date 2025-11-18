@@ -1,2 +1,6 @@
 secrets.py
 *.csv
+env
+.venv
+secrets/
+apikey.py
