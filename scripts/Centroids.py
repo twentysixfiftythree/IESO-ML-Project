@@ -1,12 +1,10 @@
 import pandas as pd
 import geopandas as gpd
-
-import requests
 from datetime import datetime, timedelta
-import time
 
 
-class WeatherDim:
+
+class Centroids:
     def __init__(self):
 
         latitude = None
@@ -29,6 +27,13 @@ class WeatherDim:
 
         print(self.shapemap)
 
+    def getCentroids(self):
+        centroids = self.shapemap['centroid']
+        centroid_list = list()
+        for point in centroids:
+            centroid_list.append((point.y, point.x))  # (latitude, longitude)
+        return centroid_list
+
 
 
 
@@ -39,5 +44,6 @@ class WeatherDim:
 
 
 if __name__ == "__main__":
-    obj = WeatherDim()
-    obj.addWeather()
+    obj = Centroids()
+    centroids = obj.getCentroids()
+    print(centroids)
