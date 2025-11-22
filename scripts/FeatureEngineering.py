@@ -1,5 +1,6 @@
 import pandas as pd
 import duckdb
+import holidays
 
 
 class CleanedDataset:
@@ -69,7 +70,23 @@ class CleanedDataset:
         
         return merged_df
     
-    def drop_unused_columns(self, merged_data):
-        # drop any unused columns from the merged data
-        cleaned_data = merged_data.drop(columns=['Hour_y', 'valid_time', 'file'])
+
+    
+    def add_calendar_features(self, cleaned_data):
+        """
+        Add calendar and holiday features to the cleaned data.
+        """
+        # add calendar features
+        cleaned_data['Month'] = cleaned_data['Date'].dt.month
+        cleaned_data['Day'] = cleaned_data['Date'].dt.day
+        cleaned_data['Weekday'] = cleaned_data['Date'].dt.weekday
+        cleaned_data['Hour'] = cleaned_data['Date'].dt.hour
+        
+        # Get Ontario holidays for all years in the dataset
+        years = cleaned_data['Date'].dt.year.unique()
+        ontario_holidays = holidays.Canada(prov='ON', years=years)
+        
+        # Create holiday indicator
+        cleaned_data['IsHoliday'] = cleaned_data['Date'].dt.date.isin(ontario_holidays).astype(int)
+        
         return cleaned_data

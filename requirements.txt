@@ -4,3 +4,4 @@ pandas>=2.0.0
 geopandas
 pathlib
 matplotlib
+holidays
