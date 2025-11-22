@@ -86,7 +86,7 @@ class CleanedDataset:
         years = cleaned_data['Date'].dt.year.unique()
         ontario_holidays = holidays.Canada(prov='ON', years=years)
         
-        # Create holiday indicator
+
         cleaned_data['IsHoliday'] = cleaned_data['Date'].dt.date.isin(ontario_holidays).astype(int)
         
         return cleaned_data
