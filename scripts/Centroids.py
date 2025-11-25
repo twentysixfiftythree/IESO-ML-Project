@@ -15,12 +15,6 @@ class Centroids:
         lang = None
         stationPressure = None
 
-        self.base_link = f"""
-        
-        https://api.pirateweather.net/forecast/{self.KEY}/
-        {[latitude]},{[longitude]},{[time]}?exclude=[excluded]&units={[unit]}
-        &extend={[hourly]}&version=[2]&lang={[lang]}&extraVars={[stationPressure]}
-        """
         self.shapemap = gpd.read_file('data/tenzones_ieso.geojson')
         self.shapemap['centroid'] = self.shapemap.geometry.centroid
         

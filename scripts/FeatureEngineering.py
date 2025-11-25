@@ -82,7 +82,7 @@ class CleanedDataset:
         cleaned_data['Weekday'] = cleaned_data['Date'].dt.weekday
         cleaned_data['Hour'] = cleaned_data['Date'].dt.hour
         
-        # Get Ontario holidays for all years in the dataset
+        # get Ontario holidays for all years in the dataset
         years = cleaned_data['Date'].dt.year.unique()
         ontario_holidays = holidays.Canada(prov='ON', years=years)
         
