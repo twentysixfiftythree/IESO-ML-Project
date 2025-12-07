@@ -6,3 +6,4 @@ pathlib
 matplotlib
 holidays
 seaborn
+duckdb
