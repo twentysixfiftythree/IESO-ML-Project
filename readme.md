@@ -1,10 +1,8 @@
 # IESO Bayesian Load Forecasting
+To use the data without running the scripts to collect the data, it's available here. You'll need the weather data on this link directly. Github has pretty small file limits.
+
+https://drive.google.com/drive/folders/1CzZE6E5Ik-xpq3nIN7kbFLupZ_t5OUTd?usp=share_link
 
 
-To look at the results, training_testing.ipynb should have most of what you're looking for. The results so far are as follows:
+If you do want to rebuild the data, run each file in scripts, or run the makefile. 
 
-| Model             | RMSE (MW) | % Above Best |
-|-------------------|-----------|--------------|
-| Prophet           | 511.08    | 0.00%        |
-| ARIMAX(1,1,1)     | 824.07    | 61.8%        |
-| Bayesian Ridge    | 517.75    | 1.3%         |
