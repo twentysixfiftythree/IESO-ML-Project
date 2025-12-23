@@ -9,4 +9,8 @@ If you do want to rebuild the data, run each file in scripts, or run the makefil
 After that, go ahead and run the notebooks. If you already have all the data from the Google Drive, it doesn't matter which order you run the notebooks. Otherwise, run in order of RQ.
 
 
+Pipeline:
+
+IESO API -> csv -> sklearn
+
 
