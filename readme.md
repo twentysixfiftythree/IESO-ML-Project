@@ -65,3 +65,11 @@ Reusable components live under `scripts/` and are imported by the notebooks:
 - Ensure consolidated CSVs match the expected columns used by the notebooks (see `FeatureEngineering.py`).
 - To save figures, create `figures/` and uncomment any `plt.savefig(...)` lines in notebooks.
 
+After that, go ahead and run the notebooks. If you already have all the data from the Google Drive, it doesn't matter which order you run the notebooks. Otherwise, run in order of RQ.
+
+
+Pipeline:
+
+IESO API -> csv -> sklearn
+
+
